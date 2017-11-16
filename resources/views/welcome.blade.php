@@ -59,42 +59,42 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group row">
-                            <label for="bookingTime" class="col-sm-2 col-form-label">Booking Time</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="bookingTime" value="" readonly>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label" for="gender">
-                                Gender specific:
-                            </label>
-                            <div class="col-sm-10">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                        <input type="radio" name="gender" value="none" autocomplete="off" checked> N/A
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="gender" value="female" autocomplete="off"> Female Only
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="gender" value="male" autocomplete="off"> Male Only
-                                    </label>
+                        <form action="/book" method="POST">
+                            <div class="form-group row">
+                                <label for="bookingTime" class="col-sm-2 col-form-label">Booking Time</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="bookingTime" value="" readonly>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="gender">
+                                    Gender specific:
+                                </label>
+                                <div class="col-sm-10">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-primary active">
+                                            <input type="radio" name="gender" value="none" autocomplete="off" checked> N/A
+                                        </label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="gender" value="female" autocomplete="off"> Female Only
+                                        </label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="gender" value="male" autocomplete="off"> Male Only
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row" style="padding:20px;">
+                                <p class="text-muted">Please respect the gender specific booking as this may be a personal preference.</p>
+                            </div>
                         </div>
-                        <div class="form-group row" style="padding:20px;">
-                            <p class="text-muted">Please respect the gender specific booking as this may be a personal preference.</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <form action="/book" method="POST">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             {{ csrf_field() }}
                             <input type="text" class="form-control" id="bookingId" name="bookingId" value="" hidden>
-                            <button type="submit" class="btn btn-success">Save changes</button>
-                        </form>
-                    </div>
+                            <button type="submit" class="btn btn-success">Book</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
