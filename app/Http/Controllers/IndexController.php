@@ -16,7 +16,7 @@ class IndexController extends Controller
     {
         //
         $times = $this->getTimes();
-        return view('welcome', compact('times'));
+        return view('welcome', compact('times', 'bookings'));
     }
 
     public function getTimes()
@@ -24,17 +24,42 @@ class IndexController extends Controller
         $times = [];
         $hours = ["12", "13", "14", "15", "16", "17"];
         $periods = ["00", "15", "30", "45"];
+        $bookings = $this->getTodaysBookings();
+
         foreach ($hours as $hour) 
         {
             foreach ($periods as $period) 
             {
-                $times[] = [
+                $time = [
                     "id" => "{$hour}{$period}",
                     "label" => "{$hour}.{$period} pm",
+                    "booked" => false,
+                    "gender" => false,
                 ];
+
+                foreach ($bookings as $booking) {
+                    if ( $booking->time == $time['id'] )
+                    {
+                        $time['booked'] = true;
+                        $time['gender'] = $booking->gender;
+                    }
+                }
+                
+                $times[] = $time;
             }
         }
         return $times;
+    }
+
+    public function getTodaysDate()
+    {
+        return date("Y-m-d");
+    }
+
+    public function getTodaysBookings()
+    {
+        $today = $this->getTodaysDate();
+        return Booking::where('date', $today)->get();
     }
 
     /**
@@ -47,7 +72,7 @@ class IndexController extends Controller
         //
         $gender = $request->gender;
         $bookingId = $request->bookingId;
-        $date = date("Y-m-d");
+        $date = $this->getTodaysDate();
         
         $booking = new Booking();
         $booking->time = $bookingId;
@@ -57,4 +82,5 @@ class IndexController extends Controller
 
         return redirect('/');
     }
+    
 }

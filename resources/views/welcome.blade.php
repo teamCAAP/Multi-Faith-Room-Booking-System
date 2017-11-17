@@ -33,11 +33,16 @@
 
             <div class="card-group">
                 @foreach ($times as $time)
-                    <div class="card">
+                    <div class="card @if($time['booked']) text-white bg-danger @endif">
                         <div class="card-block">
                             <h4 class="card-title">{{ $time['label'] }}</h4>
+                            @if($time['booked'])
+                                <p>Gender specific: {{ $time['gender'] }}</p>
+                            @endif
                             <div>
-                                <button class="btn btn-success" data-toggle="modal" data-target="#bookingModal" data-time="{{ $time['label'] }}" data-id="{{ $time['id'] }}">Book Slot</button>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#bookingModal" data-time="{{ $time['label'] }}" data-id="{{ $time['id'] }}"
+                                @if($time['booked']) disabled @endif
+                                >Book Slot</button>
                             </div>
 
                         </div>
