@@ -7,7 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>GDS Multi Faith Room</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css', true) }}">
+        <link rel="stylesheet" href="/css/app.css">
         
     </head>
     <body>
@@ -104,6 +104,6 @@
             </div>
         </div>
 
-        <script src="{{ asset('js/app.js', true) }}"></script>
+        <script src="/js/app.js"></script>
     </body>
 </html>
