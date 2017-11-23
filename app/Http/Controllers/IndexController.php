@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Booking;
+use App\BlockBookings;
 
 class IndexController extends Controller
 {
@@ -25,7 +26,8 @@ class IndexController extends Controller
         $hours = ["12", "13", "14", "15", "16", "17"];
         $periods = ["00", "15", "30", "45"];
         $bookings = $this->getTodaysBookings();
-
+        $blockBookings = $this->getBlockBookings();
+        
         foreach ($hours as $hour) 
         {
             foreach ($periods as $period) 
@@ -35,7 +37,17 @@ class IndexController extends Controller
                     "label" => "{$hour}.{$period} pm",
                     "booked" => false,
                     "gender" => false,
+                    "block_booking" => false,
+                    "block_booking_name" => false,
                 ];
+                
+                foreach ($blockBookings as $booking) {
+                    if ( $booking->time_slot == $time['id'] )
+                    {
+                        $time['block_booking'] = true;
+                        $time['block_booking_name'] = $booking->name;
+                    }
+                }
 
                 foreach ($bookings as $booking) {
                     if ( $booking->time == $time['id'] )
@@ -48,6 +60,7 @@ class IndexController extends Controller
                 $times[] = $time;
             }
         }
+
         return $times;
     }
 
@@ -60,6 +73,11 @@ class IndexController extends Controller
     {
         $today = $this->getTodaysDate();
         return Booking::where('date', $today)->get();
+    }
+
+    public function getBlockBookings()
+    {
+        return BlockBookings::all();
     }
 
     /**
