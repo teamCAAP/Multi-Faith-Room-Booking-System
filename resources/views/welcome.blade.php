@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>GDS Multi Faith Room</title>
+        <title>Multi Faith Room - Booking System</title>
         <link rel="stylesheet" href="/css/app.css">
         
     </head>
