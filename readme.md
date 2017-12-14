@@ -23,3 +23,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Font licence notes
+
+This font was made by Nathaniel Porter from images in the Department for Transport 
+Proposed Revision of the Traffic Signs Regulations and General Directions documentation 
+which can be found here: http://www.roads.dft.gov.uk/consult/traffic/regulations/10.htm
+
+This font can be found online at http://www.allan-online.co.uk
+
+It may not be used for commerical purposes.
