@@ -10227,6 +10227,7 @@ body,
 .card {
   min-width: 200px;
   min-height: 200px;
+  border-radius: 0rem;
 }
 
 .btn.disabled,
