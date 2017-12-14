@@ -12,3 +12,10 @@ body, .btn {
   min-width: 200px;
   min-height: 200px;
 }
+
+.btn.disabled, .btn:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+    color: black;
+    background-color: white;
+}
