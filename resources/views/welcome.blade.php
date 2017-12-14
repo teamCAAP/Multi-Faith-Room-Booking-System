@@ -37,11 +37,11 @@
                         <div class="card-block">
                             <h4 class="card-title">{{ $time['label'] }}</h4>
                             @if($time['booked'])
-                                <p>Gender specific: {{ $time['gender'] }}</p>
+                                <p class="booking-info">Gender specific: {{ $time['gender'] }}</p>
                             @endif
 
                             @if($time['block_booking'])
-                                <p>Block Booking: {{ $time['block_booking_name'] }}</p>
+                                <p class="booking-info">Block Booking: {{ $time['block_booking_name'] }}</p>
                             @endif
                             <div>
                                 <button class="btn @if($time['booked'] or $time['block_booking']) btn-default @else btn-success @endif" data-toggle="modal" data-target="#bookingModal" data-time="{{ $time['label'] }}" data-id="{{ $time['id'] }}"
