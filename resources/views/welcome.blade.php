@@ -11,14 +11,13 @@
         
     </head>
     <body>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+            <div class="container">
+                <a class="navbar-brand" href="#">Multi Faith Room Booking System</a>
+            </div>
+        </nav>
+        
         <div class="container">
-
-            <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-                <div class="container">
-                    <a class="navbar-brand" href="#">Multi Faith Room Booking System</a>
-                </div>
-            </nav>
-
             <br>
 
             <div class="card card-inverse" style="background-color: #333; border-color: #333;">
