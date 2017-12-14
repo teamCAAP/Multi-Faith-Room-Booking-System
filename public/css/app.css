@@ -10206,3 +10206,16 @@ a.text-gray-dark:hover {
   }
 }
 
+@font-face {
+  font-family: 'Transport';
+  src: url(/fonts/TransportMedium.woff2?1fea4bf0d37f0611203a419dd26eb358) format("woff2"), url(/fonts/TransportMedium.woff?a06420de109fab77387bedb12413780c) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Transport';
+  font-weight: 500;
+  font-style: normal;
+}
+
