@@ -44,9 +44,11 @@
                                 <p>Block Booking: {{ $time['block_booking_name'] }}</p>
                             @endif
                             <div>
-                                <button class="btn btn-success" data-toggle="modal" data-target="#bookingModal" data-time="{{ $time['label'] }}" data-id="{{ $time['id'] }}"
+                                <button class="btn @if($time['booked'] or $time['block_booking']) btn-default @else btn-success @endif" data-toggle="modal" data-target="#bookingModal" data-time="{{ $time['label'] }}" data-id="{{ $time['id'] }}"
                                 @if($time['booked'] or $time['block_booking']) disabled @endif
-                                >Book Slot</button>
+                                >
+                                    @if($time['booked'] or $time['block_booking']) Booked @else Book Slot @endif
+                                </button>
                             </div>
 
                         </div>
