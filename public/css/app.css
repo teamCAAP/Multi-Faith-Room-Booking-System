@@ -10213,7 +10213,8 @@ a.text-gray-dark:hover {
   font-style: normal;
 }
 
-body {
+body,
+.btn {
   font-family: 'Transport';
   font-weight: 500;
   font-style: normal;
