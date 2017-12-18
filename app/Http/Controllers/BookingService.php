@@ -26,7 +26,7 @@ class BookingService extends Controller
         $booking->date = $date;
         $booking->save();
 
-        return redirect('/');
+        return true;
     }
 
     /**

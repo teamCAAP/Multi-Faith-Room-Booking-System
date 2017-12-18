@@ -34,6 +34,7 @@ class IndexController extends Controller
     {
         //
         $this->_bookingService->createBooking($request);
+        return redirect('/');
     }
     
 }
