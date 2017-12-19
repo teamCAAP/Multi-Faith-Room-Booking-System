@@ -13,58 +13,48 @@
     <body>
         <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
             <div class="container">
-                <a class="navbar-brand" href="#">Multi Faith Room Booking System</a>
+                <a class="navbar-brand" href="#">Manage Bookings</a>
             </div>
         </nav>
         
         <div class="container">
-            <br>
 
-            <div class="card card-inverse" style="background-color: #333; border-color: #333;">
-                <div class="card-block">
-                    <h3 class="card-title">This is not ready for production</h3>
-                    <p class="card-text">This is currently being tested. We would like to hear your feedback, please leave an ticket on our GitHub.</p>
-                    <a href="https://github.com/DilwoarH/GDS-Multi-Faith-Room/issues/new" class="btn btn-primary" target="_blank">Leave Feedback</a>
+            <legend>
+                <a class="btn btn-link" href="/">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to bookings
+                </a>
+            </legend>
+
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
                 </div>
-            </div>
+            @endif
 
-            <br>
-
-            <div class="card-group">
-                @foreach ($times as $time)
-                    <div class="card @if($time['booked']) text-white bg-danger @endif @if($time['block_booking']) text-white bg-warning @endif">
-                        <div class="card-block">
-                            <h4 class="card-title">{{ $time['label'] }}</h4>
-                            @if($time['booked'])
-                                <p class="booking-info">Gender specific: {{ $time['gender'] }}</p>
-                            @endif
-
-                            @if($time['block_booking'])
-                                <p class="booking-info">Block Booking: {{ $time['block_booking_name'] }}</p>
-                            @endif
-                        </div>
-                        <div class="card-footer @if($time['booked']) text-white bg-danger @endif @if($time['block_booking']) text-white bg-warning @endif">
-                            <button class="btn @if($time['booked'] or $time['block_booking']) btn-default @else btn-success @endif" data-toggle="modal" data-target="#bookingModal" data-time="{{ $time['label'] }}" data-id="{{ $time['id'] }}"
-                            @if($time['booked'] or $time['block_booking']) disabled @endif
-                            >
-                                @if($time['booked'] or $time['block_booking']) Booked @else Book Slot @endif
+            @forelse( $bookings as $booking )
+                <div class="card w-100">
+                    <div class="card-header">{{ $booking->time }} PM</div>
+                    <div class="card-body" style="padding: 20px;">
+                        <p class="card-text">Gender Specific: {{ $booking->gender }}</p>
+                        <form action="/admin/delete-booking" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="booking-id" value="{{ $booking->id }}">
+                            <button class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                                Delete Booking
                             </button>
-                        </div>
+                        </form>
                     </div>
-                @endforeach
-            </div>
-
-            <br>
-
-            <div class="card card-warning text-white">
-                <div class="card-block">
-                    <h3 class="card-title">Manage Bookings</h3>
-                    <p class="card-text">Please use this responsibly.</p>
-                    <a href="/admin" class="btn btn-danger">Manage Bookings</a>
                 </div>
-            </div>
-            
-        
+            @empty
+                <div class="card w-100">
+                    <div class="card-body">
+                        <p class="card-text">No bookings made today</p>
+                    </div>
+                </div>
+            @endforelse
+
         </div>
 
         <!-- Modal -->
