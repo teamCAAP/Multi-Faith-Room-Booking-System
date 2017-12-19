@@ -11,6 +11,8 @@
 |
 */
 
+
 Route::get('/', 'IndexController@index');
 Route::post('/book', 'IndexController@createBooking');
 Route::get('/admin', 'AdminController@index');
+Route::post('/admin/delete-booking', 'AdminController@deleteBooking');

@@ -47,9 +47,13 @@ class BookingService extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request)
     {
         //
+        $id = $request['booking-id'];
+        $booking = Booking::find($id);
+        $booking->delete();
+        return;
     }
 
     public function getTimes()

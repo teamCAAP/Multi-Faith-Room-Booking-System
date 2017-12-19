@@ -24,5 +24,11 @@ class AdminController extends Controller
         $bookings = $this->_bookingService->getTodaysBookings();
         return view('admin', compact('bookings'));
     }
+
+    public function deleteBooking(Request $request)
+    {
+        $this->_bookingService->delete($request);
+        return redirect('/admin');
+    }
     
 }

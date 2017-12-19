@@ -26,13 +26,17 @@
                     <div class="card-header">{{ $booking->time }} PM</div>
                     <div class="card-body" style="padding: 20px;">
                         <p class="card-text">Gender Specific: {{ $booking->gender }}</p>
-                        <button class="btn btn-danger" data-id="{{ $booking->id }}">Delete Booking</button>
+                        <form action="/admin/delete-booking" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="booking-id" value="{{ $booking->id }}">
+                            <button class="btn btn-danger">Delete Booking</button>
+                        </form>
                     </div>
                 </div>
             @empty
                 <div class="card w-100">
                     <div class="card-body">
-                        <p class="card-text">No bookings today</p>
+                        <p class="card-text">No bookings made today</p>
                     </div>
                 </div>
             @endforelse
