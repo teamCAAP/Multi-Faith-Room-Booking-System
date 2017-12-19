@@ -28,7 +28,7 @@ class AdminController extends Controller
     public function deleteBooking(Request $request)
     {
         $this->_bookingService->delete($request);
-        return redirect('/admin');
+        return redirect('/admin')->with('status', 'Booking Deleted.');;
     }
     
 }

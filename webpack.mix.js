@@ -15,3 +15,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.copy('resources/assets/fonts', 'public/fonts')
+mix.copy('resources/assets/webfonts', 'public/fonts')

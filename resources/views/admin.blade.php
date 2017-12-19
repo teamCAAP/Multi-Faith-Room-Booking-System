@@ -18,8 +18,19 @@
         </nav>
         
         <div class="container">
-            
-            <legend>Bookings</legend>
+
+            <legend>
+                <a class="btn btn-link" href="/">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to bookings
+                </a>
+            </legend>
+
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
 
             @forelse( $bookings as $booking )
                 <div class="card w-100">
@@ -29,7 +40,10 @@
                         <form action="/admin/delete-booking" method="POST">
                             {{ csrf_field() }}
                             <input type="hidden" name="booking-id" value="{{ $booking->id }}">
-                            <button class="btn btn-danger">Delete Booking</button>
+                            <button class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                                Delete Booking
+                            </button>
                         </form>
                     </div>
                 </div>

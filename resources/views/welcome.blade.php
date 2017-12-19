@@ -53,6 +53,16 @@
                     </div>
                 @endforeach
             </div>
+
+            <br>
+
+            <div class="card card-warning text-white">
+                <div class="card-block">
+                    <h3 class="card-title">Manage Bookings</h3>
+                    <p class="card-text">Please use this responsibly.</p>
+                    <a href="/admin" class="btn btn-danger">Manage Bookings</a>
+                </div>
+            </div>
             
         
         </div>
