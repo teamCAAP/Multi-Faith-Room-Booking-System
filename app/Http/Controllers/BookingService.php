@@ -108,7 +108,7 @@ class BookingService extends Controller
     public function getTodaysBookings()
     {
         $today = $this->getTodaysDate();
-        return Booking::where('date', $today)->get();
+        return Booking::where('date', $today)->orderBy('date', 'asc')->get();
     }
 
     public function getBlockBookings()
