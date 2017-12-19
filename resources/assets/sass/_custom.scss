@@ -1,7 +1,19 @@
-body, .btn {
+body, .btn, .phase-banner{
     font-family: 'Transport';
     font-weight: 500;
     font-style: normal;
+}
+
+.navbar {
+  background-color: #0b0c0c;
+  .navbar-brand {
+    color: white;
+  }
+}
+
+#global-header-bar {
+    height: 10px;
+    background-color: #005ea5;
 }
 
 .booking-info {
