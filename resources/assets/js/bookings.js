@@ -8,4 +8,8 @@
     modal.find('#bookingTime').val(time);
     modal.find('#bookingId').val(bookingId);
   });
+
+  $('#go_to_time').on('change', function () {
+    location.hash = $(this).val();
+  });
 })();
