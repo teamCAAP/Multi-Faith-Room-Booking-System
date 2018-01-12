@@ -746,7 +746,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
-module.exports = __webpack_require__(36);
+module.exports = __webpack_require__(37);
 
 
 /***/ }),
@@ -762,6 +762,7 @@ module.exports = __webpack_require__(36);
 
 __webpack_require__(9);
 __webpack_require__(35);
+__webpack_require__(36);
 
 /* window.Vue = require('vue');
  */
@@ -32865,6 +32866,73 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports) {
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*
+ *  PrayerTimes
+ *
+ */
+
+var PrayerTimes = function () {
+    function PrayerTimes() {
+        _classCallCheck(this, PrayerTimes);
+
+        moment.locale('en-gb'); //set uk times
+        this.getPrayerTimes();
+        this._prayerTimes = {};
+    }
+
+    _createClass(PrayerTimes, [{
+        key: 'getPrayerTimes',
+        value: function getPrayerTimes() {
+            var _this = this;
+            $.get('/data/elm-prayer-times-2018.json').done(function (result) {
+                _this._prayerTimes = result;
+                _this.setTodaysTimes();
+            });
+        }
+    }, {
+        key: 'setTodaysTimes',
+        value: function setTodaysTimes() {
+            var times = this.getTodaysTimes();
+
+            $('#fajr_begins').text(times['Fajr Begins']);
+            //$('#fajr_jamaah').text(times['Fajr Jama‘ah']);
+
+            $('#zuhr_begins').text(times['Zuhr Begins']);
+            //$('#zuhr_jamaah').text(times['Zuhr Jama‘ah']);
+
+            $('#asr1_begins').text(times['Asr Mithl 1']);
+            $('#asr2_begins').text(times['Asr Mithl 2']);
+            //$('#asr_jamaah').text(times['Asr Jama‘ah']);
+
+            $('#maghrib_begins').text(times['Maghrib Begins']);
+            //$('#maghrib_jamaah').text(times['Maghrib Jama‘ah']);
+
+            $('#isha_begins').text(times['Isha Begins']);
+            //$('#isha_jamaah').text(times['Isha Jama‘ah']);
+        }
+    }, {
+        key: 'getTodaysTimes',
+        value: function getTodaysTimes() {
+            var date = moment().format('DD/MM/YYYY');
+            return this._prayerTimes[date];
+        }
+    }]);
+
+    return PrayerTimes;
+}();
+
+(function () {
+    new PrayerTimes();
+})();
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

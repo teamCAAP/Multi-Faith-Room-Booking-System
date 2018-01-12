@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 require('./bookings');
+require('./prayer-times.class');
 
 /* window.Vue = require('vue');
  */
