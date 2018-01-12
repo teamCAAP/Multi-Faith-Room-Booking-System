@@ -11,6 +11,7 @@ class PrayerTimes {
     }
 
     getPrayerTimes() {
+        // TODO: THIS WILL BREAK IN 2019 onwards
         var _this = this;
         $.get('/data/elm-prayer-times-2018.json').done(function(result){
             _this._prayerTimes = result;
