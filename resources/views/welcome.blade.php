@@ -4,13 +4,11 @@
 @include('includes/navbar', ['title' => 'Multi-faith room booking'])
 
 <div class="container">
-    <br>
+    @include('includes/help-the-project')
+    @include('includes/clock')
+    @include('includes/prayer-times')
 
-    @include('includes/beta-warning')
-
-    <br>
-
-    <div class="card-group">
+    <div class="card-group available-times">
         @foreach ($times as $time)
             <div class="card @if($time['booked']) text-white bg-danger @endif @if($time['block_booking']) text-white bg-warning @endif">
                 <div class="card-block">
@@ -43,7 +41,6 @@
             <a href="/admin" class="btn btn-danger">Manage Bookings</a>
         </div>
     </div>
-    
 
 </div>
 

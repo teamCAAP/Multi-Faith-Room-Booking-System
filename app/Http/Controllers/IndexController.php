@@ -22,7 +22,7 @@ class IndexController extends Controller
     {
         //
         $times = $this->_bookingService->getTimes();
-        return view('welcome', compact('times', 'bookings'));
+        return view('welcome', compact('times'));
     }
 
     /**
@@ -36,5 +36,4 @@ class IndexController extends Controller
         $this->_bookingService->createBooking($request);
         return redirect('/');
     }
-    
 }
