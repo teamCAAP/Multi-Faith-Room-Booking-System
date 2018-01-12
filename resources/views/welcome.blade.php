@@ -5,7 +5,7 @@
 
 <div class="container">
     @include('includes/help-the-project')
-
+    @include('includes/clock')
     @include('includes/prayer-times')
 
     <div class="card-group available-times">

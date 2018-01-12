@@ -6,7 +6,6 @@
 class PrayerTimes {
 
     constructor() {
-        moment.locale('en-gb'); //set uk times
         this.getPrayerTimes();
         this._prayerTimes = {};
     }
@@ -23,20 +22,20 @@ class PrayerTimes {
         var times = this.getTodaysTimes();
 
         $('#fajr_begins').text(times['Fajr Begins']);
-        //$('#fajr_jamaah').text(times['Fajr Jama‘ah']);
+        $('#fajr_jamaah').text(times['Fajr Jama‘ah']);
 
         $('#zuhr_begins').text(times['Zuhr Begins']);
-        //$('#zuhr_jamaah').text(times['Zuhr Jama‘ah']);
+        $('#zuhr_jamaah').text(times['Zuhr Jama‘ah']);
 
         $('#asr1_begins').text(times['Asr Mithl 1']);
         $('#asr2_begins').text(times['Asr Mithl 2']);
-        //$('#asr_jamaah').text(times['Asr Jama‘ah']);
+        $('#asr_jamaah').text(times['Asr Jama‘ah']);
 
         $('#maghrib_begins').text(times['Maghrib Begins']);
-        //$('#maghrib_jamaah').text(times['Maghrib Jama‘ah']);
+        $('#maghrib_jamaah').text(times['Maghrib Jama‘ah']);
 
         $('#isha_begins').text(times['Isha Begins']);
-        //$('#isha_jamaah').text(times['Isha Jama‘ah']);
+        $('#isha_jamaah').text(times['Isha Jama‘ah']);
     }
 
     getTodaysTimes() {

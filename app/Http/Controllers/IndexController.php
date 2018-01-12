@@ -22,7 +22,8 @@ class IndexController extends Controller
     {
         //
         $times = $this->_bookingService->getTimes();
-        return view('welcome', compact('times', 'bookings'));
+        $prayers = $this->getPrayers();
+        return view('welcome', compact('times', 'prayers'));
     }
 
     /**
@@ -36,5 +37,34 @@ class IndexController extends Controller
         $this->_bookingService->createBooking($request);
         return redirect('/');
     }
-    
+
+    public function getPrayers()
+    {
+        return [
+            [
+                'id'        => 'fajr',
+                'name'      => 'Fajr',
+            ],
+            [
+                'id'        => 'zuhr',
+                'name'      => 'Zuhr',
+            ],
+            [
+                'id'        => 'asr1',
+                'name'      => 'Asr (first mithl)',
+            ],
+            [
+                'id'        => 'asr2',
+                'name'      => 'Asr (second mithl)',
+            ],
+            [
+                'id'        => 'maghrib',
+                'name'      => 'Maghrib',
+            ],
+            [
+                'id'        => 'isha',
+                'name'      => 'Isha',
+            ],
+        ];
+    }
 }
