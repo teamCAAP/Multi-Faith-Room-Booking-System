@@ -12,7 +12,6 @@
     </head>
     <body>
         @yield('content')
-        
         <script src="/js/app.js"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109839238-1"></script>

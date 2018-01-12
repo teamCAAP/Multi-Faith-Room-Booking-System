@@ -16,3 +16,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
 
 mix.copy('resources/assets/fonts', 'public/fonts')
 mix.copy('resources/assets/webfonts', 'public/fonts')
+mix.copy('resources/assets/data', 'public/data')
