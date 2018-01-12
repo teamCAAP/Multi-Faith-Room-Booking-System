@@ -8,9 +8,11 @@
     @include('includes/clock')
     @include('includes/prayer-times')
 
+    @include('includes/go-to-time')
+
     <div class="card-group available-times">
         @foreach ($times as $time)
-            <div class="card @if($time['booked']) text-white bg-danger @endif @if($time['block_booking']) text-white bg-warning @endif">
+            <div class="card @if($time['booked']) text-white bg-danger @endif @if($time['block_booking']) text-white bg-warning @endif" id="time_card_{{ $time['id'] }}">
                 <div class="card-block">
                     <h4 class="card-title">{{ $time['label'] }}</h4>
                     @if($time['booked'])

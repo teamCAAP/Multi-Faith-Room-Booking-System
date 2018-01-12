@@ -42,3 +42,9 @@ body, .btn, .phase-banner{
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+@media (min-width:767px) {
+  .go-to-time-wrapper {
+    display: none;
+  }
+}
