@@ -7,13 +7,13 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Multi Faith Room - Booking System</title>
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/app.css?v=2018012">
         
     </head>
     <body>
         @yield('content')
         <script src="/js/moment.js"></script>
-        <script src="/js/app.js"></script>
+        <script src="/js/app.js?v=2018012"></script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109839238-1"></script>
         <script>
