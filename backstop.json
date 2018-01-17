@@ -16,9 +16,9 @@
   "onReadyScript": "chromy/onReady.js",
   "scenarios": [
     {
-      "label": "BackstopJS Homepage",
+      "label": "Homepage",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://127.0.0.1:8000",
+      "url": "http://127.0.0.1:8888",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
@@ -31,6 +31,24 @@
       "selectors": [],
       "selectorExpansion": true,
       "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Admin Screen",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "url": "http://127.0.0.1:8888/admin",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": "",
+      "selectors": [],
+      "selectorExpansion": true,
+      "misMatchThreshold": 0.1,
       "requireSameDimensions": true
     }
   ],
