@@ -1,10 +1,15 @@
 # Multi Faith Room Booking System
 
+## Deployment
+
+## Easy one click deployment
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/teamCAAP/Multi-Faith-Room-Booking-System)
+
 ## Licence
 
 MIT License
 
-Copyright (c) 2017 Muslim Digital Services
+Copyright (c) 2017 CHARITY AS A PLATFORM
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
