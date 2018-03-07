@@ -3,5 +3,16 @@
   "description": "Booking system for faith rooms.",
   "repository": "https://github.com/teamCAAP/Multi-Faith-Room-Booking-System",
   "logo": "https://pbs.twimg.com/profile_images/961758302261665798/BEDU-uIs_400x400.jpg",
-  "keywords": ["booking", "room", "faith", "laravel"]
+  "keywords": ["booking", "room", "faith", "laravel"],
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "scripts": {
+    "postdeploy": "php artisan migrate"
+  }
 }
