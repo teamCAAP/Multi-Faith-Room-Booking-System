@@ -13,7 +13,7 @@
     }
   ],
   "scripts": {
-    "postdeploy": "php artisan migrate"
+    "postdeploy": "php artisan migrate --force"
   },
   "env": {
     "APP_KEY": {
