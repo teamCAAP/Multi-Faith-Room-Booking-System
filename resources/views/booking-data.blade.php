@@ -12,9 +12,27 @@
     </legend>
 
     <h1>Booking Data</h1>
+    <p class="lead">There has been {{ $total }} booked so far <span style="font-size: 2em;">🎉🎊</span></p>
 
-    <p>There has been {{ $total }} booked so far <span style="font-size: 2em;">🎉🎊</span></p>
+    <h3>Booking stats by gender</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Male</th>
+                <th>Female</th>
+                <th>No Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $gender_stats['male'] }}</td>
+                <td>{{ $gender_stats['female'] }}</td>
+                <td>{{ $gender_stats['none'] }}</td>
+            </tr>
+        </tbody>
+    </table>
 
+    <h3>All Bookings</h3>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead>
