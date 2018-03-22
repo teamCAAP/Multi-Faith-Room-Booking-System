@@ -42,6 +42,7 @@
                     <th>Date</th>
                     <th>Gender</th>
                     <th>Created At</th>
+                    <th>Deleted At</th>
                 </tr>
             </thead>
         
@@ -53,6 +54,7 @@
                     <td>{{ $d['date'] }}</td>
                     <td>{{ $d['gender'] }}</td>
                     <td>{{ $d['created_at'] }}</td>
+                    <td>{{ $d['deleted_at'] }}</td>
                 </tr>
             @endforeach
             </tbody>
