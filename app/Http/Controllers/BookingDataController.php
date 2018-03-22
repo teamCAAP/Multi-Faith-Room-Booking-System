@@ -10,6 +10,7 @@ class BookingDataController extends Controller
     //
     public function index(BookingService $bookingService){
         $data = $bookingService->getAllData();
-        return view('booking-data', $data);
+        $gender_stats = $bookingService->getGenderStats();
+        return view('booking-data', $data)->with('gender_stats', $gender_stats);
     }
 }

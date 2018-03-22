@@ -121,4 +121,13 @@ class BookingService extends Controller
         return Booking::paginate();
     }
 
+    public function getGenderStats()
+    {  
+        return [
+            "male" => Booking::where('gender', 'male')->count(),
+            "female" => Booking::where('gender', 'female')->count(),
+            "none" => Booking::where('gender', 'none')->count(),
+        ];
+    }
+
 }
