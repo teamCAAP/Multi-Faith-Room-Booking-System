@@ -40,7 +40,8 @@
         <div class="card-block">
             <h3 class="card-title">Manage Bookings</h3>
             <p class="card-text">Please use this responsibly.</p>
-            <a href="/admin" class="btn btn-danger">Manage Bookings</a>
+            <a href="/admin" class="btn btn-danger">Delete Bookings</a>
+            <a href="/booking-data" class="btn btn-primary">See all booking data</a>
         </div>
     </div>
 

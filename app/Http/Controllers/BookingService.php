@@ -116,4 +116,9 @@ class BookingService extends Controller
         return BlockBookings::all();
     }
 
+    public function getAllData()
+    {
+        return Booking::paginate();
+    }
+
 }
